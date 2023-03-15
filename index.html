@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love list</title>
+    <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row text- mt-5">
+            <div class="col-12 mx-auto p-3 w-75 border shadow-lg">
+                <h4 class="text-center">LOVE LIST</h4>
+                <hr>
+
+               <div class="row">
+               <div class="col-sm-5 col-md-5 col-lg-6">
+                <legend class="fs-5">First Partner's Name </legend>
+                <input type="text" id="fpn" class="form-control"><br>
+               </div>
+
+               <div class="col-sm-5 col-md-5 col-lg-6">
+                   <legend class="fs-5"> Second Partner's Name </legend>
+                   <input type="text" id="spn"  class="form-control">
+               </div>
+
+               <div class="col-sm-5 col-md-5 col-lg-6">
+                <legend class="fs-5 my-2">Relationship Year</legend>
+                <input type="text" id="ry" class="form-control"><br>
+               </div>
+
+               <div class="col-sm-5 col-md-5 col-lg-6">
+                   <legend class="fs-5">Love Percentage</legend>
+                   <input type="text" id="lp"  class="form-control">
+               </div>
+
+                <div class="text-center">
+                   <button class="btn btn-primary my-3" onclick="addList()">ADD LIST</button>
+                   <button class="btn btn-warning">CHECK LIST</button>
+                </div>               
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        let everyDetails = []
+
+        const addList = () => {
+            const eachDetails = {
+                firstname : fpn.value,
+                secondname : spn.value,
+                year : ry.value,
+                loveper : lp.value,
+            }
+            everyDetails.push(eachDetails)
+            localStorage.setItem('userlist', JSON.stringify(everyDetails))
+            console.log(everyDetails)
+        }
+    </script>
+</body>
+</html>
